@@ -9,9 +9,12 @@ jobs:
           name: Validate packer config
           command: | 
             packer validate ubuntu-ami.json
+
+      -run:
           name: Build packer config
           command: | 
             packer build ubuntu-ami.json
+
 
   build:
     docker:
@@ -22,6 +25,8 @@ jobs:
           name: Validate packer config
           command: | 
             packer validate ubuntu-ami.json
+
+      - run:
           name: Build packer config
           command: | 
             packer build ubuntu-ami.json
