@@ -6,6 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update timestamp
+          command: |
+            sudo service ntp stop
+            sudo ntpdate -s time.nist.gov
+            sudo service ntp start
+      - run:
           name: Validate packer config
           command: | 
             packer validate \
