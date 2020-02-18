@@ -15,22 +15,22 @@ jobs:
           name: Validate packer config
           command: | 
             packer validate \
-            -var 'aws_access_key=${AWS_ACCESS_KEY}' \
-            -var 'aws_secret_key=${AWS_SECRET_KEY}' \
-            -var 'aws_region=us-east-1' \
-            -var 'ami_users=${AMI_USERS}' \
-            -var 'source_ami=${SOURCE_AMI}' \
+            -var "aws_access_key=${AWS_ACCESS_KEY}" \
+            -var "aws_secret_key=${AWS_SECRET_KEY}" \
+            -var "aws_region=us-east-1" \
+            -var "ami_users=${AMI_USERS}" \
+            -var "source_ami=${SOURCE_AMI}" \
             ubuntu-ami.json
 
       - run:
           name: Build packer config
           command: | 
             packer build \
-            -var 'aws_access_key=${AWS_ACCESS_KEY}' \
-            -var 'aws_secret_key=${AWS_SECRET_KEY}' \
-            -var 'aws_region=us-east-1' \
-            -var 'ami_users=748596750012' \
-            -var 'source_ami=ami-07ebfd5b3428b6f4d' \
+            -var "aws_access_key=${AWS_ACCESS_KEY}" \
+            -var "aws_secret_key=${AWS_SECRET_KEY}" \
+            -var "aws_region=us-east-1" \
+            -var "ami_users=${AMI_USERS}" \
+            -var "source_ami=${SOURCE_AMI}" \
             ubuntu-ami.json
 
            
