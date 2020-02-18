@@ -1,20 +1,5 @@
 version: 2
 jobs:
-  pr_check:
-    docker:
-      - image: hashicorp/packer:1.1.1
-    steps:
-      - checkout
-      - run:
-          name: Validate packer config
-          command: | 
-            packer validate ubuntu-ami.json
-
-      - run:
-          name: Build packer config
-          command: | 
-            packer build ubuntu-ami.json
-
   build:
     docker:
       - image: hashicorp/packer:1.1.1
@@ -34,9 +19,6 @@ jobs:
             
 workflows:
   version: 2
-  pr-check-workflow:
-    jobs:
-      - pr_check
   build-deploy-workflow:
     jobs:
       - build:
@@ -44,3 +26,4 @@ workflows:
             branches:
               only:
                 - master
+  
