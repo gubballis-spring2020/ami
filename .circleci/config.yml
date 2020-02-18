@@ -5,12 +5,12 @@ jobs:
       - image: hashicorp/packer:1.1.1
     steps:
       - checkout
-      - run:
-          name: Update timestamp
-          command: |
-            sudo service ntp stop
-            sudo ntpdate -s time.nist.gov
-            sudo service ntp start
+      # - run:
+      #     name: Update timestamp
+      #     command: |
+      #       sudo service ntp stop
+      #       sudo ntpdate -s time.nist.gov
+      #       sudo service ntp start
       - run:
           name: Validate packer config
           command: | 
@@ -29,8 +29,8 @@ jobs:
             -var 'aws_access_key=${AWS_ACCESS_KEY}' \
             -var 'aws_secret_key=${AWS_SECRET_KEY}' \
             -var 'aws_region=us-east-1' \
-            -var 'ami_users=${AMI_USERS}' \
-            -var 'source_ami=${SOURCE_AMI}' \
+            -var 'ami_users=748596750012' \
+            -var 'source_ami=ami-07ebfd5b3428b6f4d' \
             ubuntu-ami.json
 
            
