@@ -20,3 +20,4 @@ ubuntu-ami.json
 ```
 
 Where AMI_USERS - are the account numbers to which you want to share your custom image and SOURCE_AMI - is the source image ID which is your base.
+
