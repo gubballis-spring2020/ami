@@ -39,8 +39,7 @@
 		        "sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -",
                 "sudo apt-get update",
                 "sudo apt-get install -y nodejs",
-                "sudo npm install -g npm",
-                "sudo apt-get install mysql-server -y"
+                "sudo npm install -g npm"
             ]
         }
     ]
