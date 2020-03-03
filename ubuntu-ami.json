@@ -24,7 +24,7 @@
             "launch_block_device_mappings": [
                 {
                     "device_name": "/dev/sda1",
-                    "volume_size": 8,
+                    "volume_size": 20,
                     "volume_type": "gp2",
                     "delete_on_termination": true
                 }
@@ -39,7 +39,14 @@
 		        "sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -",
                 "sudo apt-get update",
                 "sudo apt-get install -y nodejs",
-                "sudo npm install -g npm"
+                "sudo npm install -g npm",
+                "sudo apt-get install ruby -y",
+                "sudo apt-get install wget -y",
+                "cd /home/ubuntu",
+                "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
+                "chmod +x ./install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent start"
             ]
         }
     ]
