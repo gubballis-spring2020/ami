@@ -10,12 +10,12 @@ jobs:
           command: |
             ls -la ~/
             pwd
-            sudo apt-get update
-            sudo apt-get install curl -y
+            apt-get update
+            apt-get install curl -y
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            sudo apt-get install unzip -y
+            sapt-get install unzip -y
             unzip awscliv2.zip
-            sudo ./aws/install
+            ./aws/install
       - run:
           name: Validate packer config
           command: | 
